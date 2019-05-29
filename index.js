@@ -15,7 +15,8 @@
 
 Function.prototype.safeCall = function (context, ...args) {
     try {
-        this(...args);
+        const result = this.call(context, ...args);
+        return result;
     } catch (error) {
         return null;
     }
